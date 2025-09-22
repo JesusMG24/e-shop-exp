@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import shoppingCart from "../assets/shopping-cart.png";
 
 export default function Carousel({ items, handleCartProducts, handleWishlist }) {
   const carouselRef = useRef(null);
@@ -62,7 +63,7 @@ export default function Carousel({ items, handleCartProducts, handleWishlist }) 
                   handleCartProducts({ ...component, count: 1 })
                 }>
                 <p>Add</p>
-                <img src="/src/assets/shopping-cart.png" className="h-5 w-5"/>
+                <img src={shoppingCart} className="h-5 w-5"/>
               </button>
             </div>
           </article>

@@ -2,6 +2,7 @@ import Login from "./Login"
 import Register from "./Register";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
+import shoppingCart from "../assets/shopping-cart.png";
 
 export default function Header(props) {
 
@@ -26,7 +27,7 @@ export default function Header(props) {
           </a>
           <p>|</p>
           <a href="/checkout" className={'flex justify-center items-center gap-1'}>
-            <img src="src/assets/shopping-cart.png" className="h-5 w-5"></img>
+            <img src={shoppingCart} className="h-5 w-5"></img>
             <p>{cartCount}</p>
           </a>
         </nav>
