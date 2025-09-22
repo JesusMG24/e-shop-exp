@@ -58,7 +58,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',
+    'https://effervescent-centaur-74136d.netlify.app',
 ]
 
 REST_FRAMEWORK = {
