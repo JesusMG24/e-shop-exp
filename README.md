@@ -1,4 +1,4 @@
-<h1><a>https://effervescent-centaur-74136d.netlify.app/</a></h1>
+<h1>https://effervescent-centaur-74136d.netlify.app/</h1>
 <hr></hr>
 <img width="1920" height="947" alt="Screenshot_20250922_150121" src="https://github.com/user-attachments/assets/6478f4bb-99d3-4a5d-a559-66c4b548a80f" />
 <hr></hr>
