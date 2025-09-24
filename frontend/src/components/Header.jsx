@@ -12,27 +12,28 @@ export default function Header(props) {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 bg-black font-bold">
-        <h1 className="w-full text-center text-[50px]">
-          <a href="/" className="">e-shop</a>
+      <header className="flex justify-around md:gap-50 xl:block fixed top-0 left-0 w-full z-50 bg-black font-bold h-20 xl:h-15">
+        <h1 className="flex items-center h-full xl:w-full xl:text-center xl:justify-center xl:text-5xl text-4xl">
+          <a href="/">e-shop</a>
         </h1>
-        <hr></hr>
-        <nav className='flex justify-end pr-[20px] gap-[20px] items-center h-[40px]'>
+        <hr className="hidden xl:block"></hr>
+        <nav className='gap-3 md:gap-10 text-xl xl:relative xl:text-[1rem] flex h-full justify-end xl:pr-[20px] xl:gap-[20px] items-center xl:bg-black'>
           <button className="cursor-pointer" onClick={() => setShowLogin(true)}>Login</button>
-          <p>|</p>
+          <p className="hidden xl:block">|</p>
           <button className="cursor-pointer" onClick={() => setShowRegister(true)}>Register</button>
-          <p>|</p>
+          <p className="hidden xl:block">|</p>
           <a href="/wishlist">
-            <p>Wishlist ♡</p>
+            <p className="text-3xl xl:text-[1rem] xl:flex"><span className="hidden xl:block xl:pr-2">Wishlist</span>♡</p>
           </a>
-          <p>|</p>
-          <a href="/checkout" className={'flex justify-center items-center gap-1'}>
-            <img src={shoppingCart} className="h-5 w-5"></img>
-            <p>{cartCount}</p>
+          <p className="hidden xl:block">|</p>
+          <a href="/checkout" className='flex h-full w-8 xl:w-9 items-center gap-1 relative'>
+            <img src={shoppingCart} className="h-6 xl:h-5"></img>
+            <p className="text-sm xl:text-md absolute top-4 xl:top-[1.25rem] xl:text-[1rem] right-0">{cartCount}</p>
           </a>
-        </nav>
+          <SearchBar />
+        </nav>    
       </header>
-      <SearchBar />
+      
 
       {showLogin && (
         <div onClick={() => setShowLogin(false)} className="fixed z-50 top-0 left-0 w-full h-full flex justify-center items-center backdrop-blur-sm">

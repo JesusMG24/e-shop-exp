@@ -81,10 +81,10 @@ function App() {
   return (
     <>
       <Header cartCount={cartCount}/>
-      <section className="mt-[150px] mb-[150px] flex flex-col gap-[100px]">
+      <section className="mt-35 mb-10 flex flex-col gap-5">
         {categorizedItems.map(({ category, items }) => (
-          <div key={category} className="h-[400px]">
-            <h2 className="font-bold text-[30px] text-center">{pluralizeCategory(category)}</h2>
+          <div key={category} className="h-120">
+            <h2 className="font-bold text-4xl text-center">{pluralizeCategory(category)}</h2>
             <Carousel items={items} handleCartProducts={handleCartProducts} handleWishlist={handleWishlist}/>
           </div>
         ))}
