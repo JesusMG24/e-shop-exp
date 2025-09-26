@@ -17,7 +17,7 @@ export default function Header(props) {
           <a href="/">e-shop</a>
         </h1>
         <hr className="hidden xl:block"></hr>
-        <nav className='gap-3 md:gap-10 text-xl xl:relative xl:text-[1rem] flex h-full justify-end xl:pr-[20px] xl:gap-[20px] items-center xl:bg-black'>
+        <nav className='gap-3 md:gap-10 text-xl xl:relative xl:text-[1rem] flex h-full justify-end xl:pr-[1vw] items-center xl:bg-black xl:gap-[1vw]'>
           <button className="cursor-pointer" onClick={() => setShowLogin(true)}>Login</button>
           <p className="hidden xl:block">|</p>
           <button className="cursor-pointer" onClick={() => setShowRegister(true)}>Register</button>

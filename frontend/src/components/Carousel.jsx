@@ -43,7 +43,7 @@ export default function Carousel({ items, handleCartProducts, handleWishlist }) 
 
       <div ref={carouselRef} className="flex mr-5 ml-5 md:mr-0 md:ml-0 w-full gap-10 md:gap-0 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory">
         {clonedItems.map((component, index) => (
-          <article key={index} className="w-full md:w-1/2 md:p-3 xl:h-[400px] xl:w-[400px] flex flex-col flex-shrink-0 snap-center items-center justify-end overflow-hidden rounded-[30px]">
+          <article key={index} className="w-full md:w-1/2 lg:w-1/3 md:p-3 xl:h-[400px] xl:w-[400px] flex flex-col flex-shrink-0 snap-center items-center justify-end overflow-hidden rounded-[30px]">
             <div className="bg-gray-600 w-full h-full rounded-xl overflow-hidden flex flex-col items-center">
               <div className="w-full flex justify-end">
                 <button className="bg-gray-800 rounded-full w-10 xl:w-7 cursor-pointer hover:invert mt-[10px] mr-[10px] text-4xl xl:text-xl"
@@ -52,8 +52,8 @@ export default function Carousel({ items, handleCartProducts, handleWishlist }) 
               <figure className="h-[250px] w-[250px] flex items-center justify-center bg-white rounded-[30px] overflow-hidden mb-6">
                 <img src={component.image_url} className="max-w-full max-h-full object-contain"/>
               </figure>
-              <h2 className="text-xl w-full xl:h-16 font-bold bg-gray-700 line-clamp-2">
-                {component.name}
+              <h2 className="text-xl w-full xl:h-16 font-bold bg-gray-700 line-clamp-2 hover:underline">
+                <a href={`/component/${component.id}`}>{component.name}</a>
               </h2>
               <div className="grid grid-cols-2 w-full h-10 font-bold">
                 <div className="flex items-center justify-center bg-gray-800 h-full">

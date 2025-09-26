@@ -18,6 +18,10 @@ def get_components(request):
     serializedData = ComponentSerializer(components, many=True).data
     return Response(serializedData)
 
+class ComponentPage(generics.RetrieveAPIView):
+    serializer_class = ComponentSerializer
+    queryset = Component.objects.all()
+
 class ComponentSearchView(generics.ListAPIView):
     serializer_class = ComponentSerializer
 

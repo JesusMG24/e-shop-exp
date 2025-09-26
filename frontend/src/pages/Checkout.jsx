@@ -59,13 +59,13 @@ export default function Checkout() {
   return (
     <>
       <Header cartCount={cartCount} />
-      <section className="flex flex-col items-center gap-10 mt-[150px] mb-[150px]">
+      <section className="flex flex-col items-center gap-5 mt-40 mb-30">
         {cart.map((component) => (
-          <div key={component.id} className="flex bg-gray-800 w-200 justify-evenly items-center rounded-[50px] font-bold border-[1px]">
-            <div className="h-100 w-100 flex flex-col justify-center items-center">
-              <div className="flex flex-col w-50 items-center gap-5">
+          <div key={component.id} className="flex bg-gray-800 h-50 w-screen justify-evenly items-center rounded-3xl font-bold border-1 md:w-150 md:h-70 xl:w-200 xl:h-80">
+            <div className="h-full w-50 flex flex-col justify-center items-center md:w-70">
+              <div className="flex flex-col items-center gap-5">
                 <div>
-                  <p className="font-bold">{component.name}</p>
+                  <a href={`/component/${component.id}`} className="font-bold line-clamp-3 md:line-clamp-4 hover:underline">{component.name}</a>
                 </div>
                 <div className="flex gap-5 rounded-full bg-gray-700 justify-center w-30">
                   <button onClick={() => handleRemoveProduct(component)} className="w-5 font-bold cursor-pointer">-</button>
@@ -75,10 +75,10 @@ export default function Checkout() {
               </div>
             </div>
             <figure className="flex flex-col justify-center items-center">
-              <div className="h-[200px] w-[200px] rounded-t-[20px] bg-white overflow-hidden flex justify-center items-center">
+              <div className="h-30 w-30 rounded-t-3xl bg-white overflow-hidden flex justify-center items-center md:h-40 md:w-40 xl:h-50 xl:w-50">
                 <img src={component.image_url} className="max-w-full max-h-full object-contain"/>
               </div>
-              <figcaption className="rounded-b-[20px] bg-blue-500 w-[200px] flex justify-center">
+              <figcaption className="rounded-b-3xl bg-blue-500 w-30 flex justify-center md:w-40 xl:w-50">
                 <p className="font-bold text-white">${component.price}</p>
               </figcaption>
             </figure>

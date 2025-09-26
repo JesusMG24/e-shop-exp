@@ -61,23 +61,25 @@ export default function Wishlist() {
     return (
         <>
             <Header cartCount={cartCount}/>
-            <section className="flex flex-col gap-[30px] w-full items-center mt-[150px] mb-[50px]">
+            <section className="flex flex-col gap-5 w-screen items-center mt-40 mb-20">
                 {wishlist.map((component) => (
-                    <div key={component.id} className="flex bg-gray-800 w-200 h-100 justify-evenly items-center rounded-[50px] font-bold border-[1px]">
-                        <div className="relative flex flex-col h-full w-100 gap-[20px] justify-center">
-                            <h2>{component.name}</h2>
-                            <button className="text-center w-full absolute text-gray-500 underline cursor-pointer hover:text-white bottom-0 mb-[85px]"
+                    <div key={component.id} className="flex bg-gray-800 w-full h-50 justify-evenly items-center rounded-[50px] font-bold border-[1px] md:h-70 md:w-150 xl:h-90 xl:w-200">
+                        <div className="relative flex flex-col h-full w-50 gap-[20px] justify-center xl:w-80">
+                            <h2 className="line-clamp-2 absolute top-17 hover:underline md:top-22 md:line-clamp-3 xl:line-clamp-4 xl:top-26">
+                                <a href={`/component/${component.id}`}>{component.name}</a>
+                            </h2>
+                            <button className="text-center w-full absolute text-gray-500 underline cursor-pointer hover:text-white bottom-7 md:bottom-15 xl:bottom-20"
                             onClick={() => handleRemoveProduct(component)}>Remove from wishlist</button>
                         </div>
                         <figure className="flex flex-col justify-center items-center">
-                            <div className="h-[200px] w-[200px] rounded-t-[20px] bg-white overflow-hidden flex justify-center items-center">
+                            <div className="h-25 w-30 rounded-t-[20px] bg-white overflow-hidden flex justify-center items-center md:h-45 md:w-50 xl:h-55 xl:w-60">
                                 <img src={component.image_url} className="max-w-full max-h-full object-contain"/>
                             </div>
-                            <div className="flex h-[30px]">
-                                <figcaption className="bg-blue-500 w-[100px] flex justify-center items-center rounded-bl-[20px]">
+                            <div className="flex flex-col h-10 w-full md:flex-row xl:h-8">
+                                <figcaption className="bg-blue-500 w-full flex justify-center items-center md:rounded-bl-[20px]">
                                     <p className="font-bold text-white">${component.price}</p>
                                 </figcaption>
-                                <button className="flex items-center justify-center gap-[5px] bg-gray-700 w-[100px] cursor-pointer hover:invert rounded-br-[20px]" onClick={() => handleCartProducts({ ...component, count: 1 })}>
+                                <button className="flex items-center justify-center gap-[5px] bg-gray-700 w-full cursor-pointer hover:invert rounded-bl-[20px] rounded-br-[20px] md:rounded-bl-none" onClick={() => handleCartProducts({ ...component, count: 1 })}>
                                     <p>Add</p>
                                     <img src="/src/assets/shopping-cart.png" className="h-[18px] w-[18px]"/>
                                 </button>
